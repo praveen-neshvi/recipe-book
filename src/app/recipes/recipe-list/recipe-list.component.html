@@ -5,19 +5,10 @@
 </div>
 <hr>
 <div class="row">
-    <div class="col-xs-12">
-        <div class="card p-3 mt-2" *ngFor="let item of recipes">
-            <a href="#" class="list-group-item clearfix" >
-                <div class="float-start">
-                    <h4 class="list-group-item-heading">{{ item.name }}</h4>
-                    <p class="list-group-item-text"> {{ item.description }} </p>
-                </div>
-                <span class="float-end">
-                    <img src="{{ item.imagePath }}" alt="" class="img-responsive" style=" width: 80px; max-height: 80px; object-fit: cover;">
-                </span>
-            </a>
-        </div>
-        <app-recipe-item></app-recipe-item>
+    <div class="col-xs-12" *ngFor="let item of recipes">
+        <app-recipe-item 
+        [item] = "item"
+        (recipeSelected)="onRecipeSelected(item)"></app-recipe-item>
     </div>
 </div>
 

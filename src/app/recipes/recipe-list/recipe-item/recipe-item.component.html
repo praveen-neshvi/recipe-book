@@ -1,1 +1,11 @@
-<p>recipe-item works!</p>
+<div class="card p-3 mt-2">
+    <a href="#" class="list-group-item clearfix" (click)="onSelected()">
+        <div class="float-start">
+            <h4 class="list-group-item-heading">{{ item.name }}</h4>
+            <p class="list-group-item-text"> {{ item.description }} </p>
+        </div>
+        <span class="float-end">
+            <img src="{{ item.imagePath }}" alt="No image found" class="img-responsive" style=" width: 80px; max-height: 80px; object-fit: cover;">
+        </span>
+    </a>
+</div>
